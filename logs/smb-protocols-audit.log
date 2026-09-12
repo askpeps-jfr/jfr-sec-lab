@@ -1,0 +1,30 @@
+# ==============================================================================
+# JFRsec - Offensive Node (Kali) Protocol Hardening Verification
+# Target: Windows Server 2022 Active Directory Domain Controller (192.168.50.10)
+# Auditor: Jose F. Romero (Kali Offensive Platform)
+# ==============================================================================
+
+$ nmap -p445 --script smb-protocols,smb-security-mode 192.168.50.10-30
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+| smb-protocols: 
+|   dialects: 
+|     2.0.2
+|     2.1
+|_    3.1.1
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+
+Mitigation table
+----------------------------------------------------------------------
+Finding                     Risk      Mitigation
+----------------------------------------------------------------------
+SMBv1 not offered           -         Confirmed disabled (pass)
+Signing required            -         Confirmed enforced (pass)
+Guest fallback available    Medium    Disable guest auth on shares
+----------------------------------------------------------------------
