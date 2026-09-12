@@ -18,6 +18,7 @@ The lab operates on dedicated physical hardware decoupled from domestic and prod
 
 ## 2. Virtual Environment Inventory
 
+```text
 +-------------------------------------------------------------------------------+
 |                       ISOLATED VLAN 53 (192.168.50.0/24)                      |
 |                                                                               |
@@ -27,6 +28,7 @@ The lab operates on dedicated physical hardware decoupled from domestic and prod
 |  |  192.168.50.10     |     |  192.168.50.20     |     |  192.168.50.30    |  |
 |  +--------------------+     +--------------------+     +-------------------+  |
 +-------------------------------------------------------------------------------+
+```
 
 ### Node 01: Enterprise Domain Controller (`W2K22`)
 * **Role:** Active Directory Domain Services (AD DS), DNS, Kerberos Key Distribution Center (KDC)
